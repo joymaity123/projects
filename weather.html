@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Weather Dashboard</h1>
+        <div class="search-container">
+            <input type="text" id="locationInput" placeholder="Enter Location" required>
+            <button id="searchBtn">Search</button>
+            <button id="saveFavoriteBtn">Save as Favorite</button>
+        </div>
+        <div class="unit-toggle">
+            <label>
+                <input type="radio" name="unit" value="imperial" checked> °F / mph
+            </label>
+            <label>
+                <input type="radio" name="unit" value="metric"> °C / km/h
+            </label>
+        </div>
+        <div id="loading" class="loading" style="display:none;">Loading...</div>
+        <p id="error-message" class="error-message" style="display:none;"></p>
+        <div id="alert-container" class="alert-container" style="display:none;"></div>
+    </header>
+    <main>
+        <section id="current-weather" class="card">
+            <h2 id="temperature">77°F</h2>
+            <p id="conditions">Cloudy</p>
+            <img id="weatherIcon" src="" alt="Weather Icon" class="weather-icon" style="display:none;">
+            <p id="localTime">Local Time: <span id="time"></span></p>
+        </section>
+
+        <section id="details" class="card">
+            <h3>Weather Details</h3>
+            <div class="details-grid">
+                <p>Humidity: <span id="humidity">79%</span></p>
+                <p>Visibility: <span id="visibility">7.02 miles</span></p>
+                <p>UV Index: <span id="uvIndex">4 (Moderate)</span></p>
+                <p>Wind Speed: <span id="windSpeed">10 mph</span></p>
+                <p>Pressure: <span id="pressure">1012 hPa</span></p>
+                <p>Sunrise: <span id="sunrise">6:00 AM</span></p>
+                <p>Sunset: <span id="sunset">6:00 PM</span></p>
+            </div>
+            <p id="date"></p>
+        </section>
+
+        <section id="forecast" class="card">
+            <h3>5-Day Forecast</h3>
+            <div id="forecast-container">
+                <!-- Forecast data will go here -->
+            </div>
+        </section>
+
+        <section id="search-history" class="card">
+            <h3>Search History</h3>
+            <ul id="history-list"></ul>
+        </section>
+
+        <section id="favorites" class="card">
+            <h3>Favorite Locations</h3>
+            <ul id="favorites-list"></ul>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
